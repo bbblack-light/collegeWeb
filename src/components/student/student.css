@@ -1,0 +1,66 @@
+.student {
+  &__info-item {
+    display: block;
+    text-decoration: none;
+    background-color: #d8d8d829;
+    border: 1px #ffd9d9 solid;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    color: #5d5d5d;
+
+    a {
+      text-decoration: none;
+      color: #5d5d5d;
+
+      &:visited {
+        color: #5d5d5d;
+      }
+    }
+  }
+
+  &__modal {
+    top: 50%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    opacity: 90%;
+    background-color:  #e6dfdfc4;
+    margin-top: 200px;
+    height: 200px;
+  }
+
+  &__input {
+    height: 25px;
+    width: 96%;
+    font-size: 22px;
+    color: #5a5a5a;
+    border: none;
+    border-bottom: 1px #b5b2b2 solid;
+    outline: none;
+    margin:1%;
+  }
+
+  &__btn {
+    display: inline-block;
+    width: 45%;
+    height: 50px;
+    background-color: #d8d8d829;
+    line-height: 25px;
+    text-decoration: none;
+    border: 1px #ffd9d9 solid;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    color: #5d5d5d;
+    margin-top: 10px;
+  }
+
+  &__error {
+    color: red;
+  }
+}
