@@ -10,7 +10,7 @@ export default function Main(props) {
   return (
     <div className={cn()}>
       <div className={ cn('info')}>
-        <h1>Мобильный портал СКМиЭ СГТУ им. Гагарина Ю.А.</h1>
+        <h1>Мобильный портал ППК СГТУ имени Гагарина Ю. А.</h1>
         <p>Здесь собрана основная информация, которая должна быть под рукой</p>
       </div>
       <section className={cn('menu')}>
