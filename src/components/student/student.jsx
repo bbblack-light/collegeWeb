@@ -40,6 +40,11 @@ export default function Student(props) {
         localStorage.setItem('token', data.item.token); // сохраняем токен
         setModalIsOpenToFalse(); //закрываем модальное окно
         setIsLogin(true); // ставим флаг на результат "АВТОРИЗОВАНО"
+        getUser().then((data) => { // подгружаем пользователя
+          if (!isError(data)) {
+            setUser(data)
+          }; // если вернулась не ошибка, то присваиваем user
+        })
       }
       else {
         setError('Не получилось авторизоваться'); //выводим в консоль ошибку, если не получилось авторизоваться
@@ -67,7 +72,9 @@ export default function Student(props) {
       setIsLogin(true);
     }
     getUser().then((data) => { // подгружаем пользователя
-      if (!isError(data)) setUser(data); // если вернулась не ошибка, то присваиваем user
+      if (!isError(data)) {
+        setUser(data)
+      }; // если вернулась не ошибка, то присваиваем user
     })
   }
 
