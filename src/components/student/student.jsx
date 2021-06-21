@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { createCn } from 'bem-react-classname';
 import BackButton from '../back-button/backButton';
 import Modal from 'react-modal';
-import { loginUser, isError } from '../../services/UserService';
+import { loginUser, isError, getUser } from '../../services/UserService';
 
 import config from '../../config';
 
