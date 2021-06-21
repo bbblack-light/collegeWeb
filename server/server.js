@@ -42,6 +42,6 @@ app.get('*', (req,res) =>{
 });
 
 
-app.listen(port, () => { //запускаем сервер
+http.listen((process.env.PORT || port), () => { //запускаем сервер
   console.log(`App listening at http://localhost:${port}`)
 })
