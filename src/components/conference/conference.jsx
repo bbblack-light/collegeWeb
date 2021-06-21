@@ -49,6 +49,10 @@ export default function Conference(props) {
 
   const setModalIsOpenToFalse =()=>{ // загрывает окно добавления
     setModalIsOpen(false)
+    setId(0); // сбрасываем значения
+    setPassword(''); // сбрасываем значения
+    setTeacher(''); // сбрасываем значения
+    setUrl(''); // сбрасываем значения
   }
   
   const saveConference =()=>{ // функция сохранения конференции
@@ -68,12 +72,9 @@ export default function Conference(props) {
           conferenceInfo.push(data); // то заменяем ее
           setConference(conferenceInfo); // и обновляем список конференций
         }
-        setId(0); // сбрасываем значения
-        setPassword(''); // сбрасываем значения
-        setTeacher(''); // сбрасываем значения
-        setUrl(''); // сбрасываем значения
       } 
       setModalIsOpenToFalse(); // загрываем окно добавления
+      
     })
   }
 

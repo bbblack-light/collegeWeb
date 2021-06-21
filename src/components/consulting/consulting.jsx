@@ -57,7 +57,13 @@ export default function Consulting(props) {
   }
 
   const setModalIsOpenToFalse =()=>{ // загрывает окно добавления
-    setModalIsOpen(false)
+    setModalIsOpen(false);
+    setId(0); // сбрасываем значения
+    setDate(new Date()); // сбрасываем значения
+    setTeacher(''); // сбрасываем значения
+    setDescription(''); // сбрасываем значения
+    setCabinet(0); // сбрасываем значения
+    setDiscipline(''); // сбрасываем значения
   }
   
   const saveConference =()=>{ // функция сохранения конференции
@@ -84,12 +90,6 @@ export default function Consulting(props) {
           consultingInfo.push(data) // то заменяем ее
           setConsulting(consultingInfo); // и обновляем список конференций
         }
-        setId(0); // сбрасываем значения
-        setDate(new Date()); // сбрасываем значения
-        setTeacher(''); // сбрасываем значения
-        setDescription(''); // сбрасываем значения
-        setCabinet(0); // сбрасываем значения
-        setDiscipline(''); // сбрасываем значения
       } 
       setModalIsOpenToFalse(); // загрываем окно добавления
     })

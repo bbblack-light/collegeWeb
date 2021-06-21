@@ -71,8 +71,14 @@ export default function MasterClass(props) {
   }
 
   const setModalIsOpenToFalse =()=>{ // загрывает окно добавления
-      setModalIsOpen(false)
+      setModalIsOpen(false);
       setIsEdit(false);
+      setUserId('');
+      setLastName('');
+      setFirstName('');
+      setPatronymic('')
+      setstudNumber('');
+      setPassword('');
   }
 
   const afterSave =(data, saveMC) => { //метод определяет сохранили студента или изменили аналогично конференциям, мастер классам и консультациям
@@ -89,12 +95,6 @@ export default function MasterClass(props) {
         studentsInfo.push(saveMC)
         setStudent(studentsInfo);
       }
-      setUserId('');
-      setLastName('');
-      setFirstName('');
-      setPatronymic('')
-      setstudNumber('');
-      setPassword('');
     } 
     setModalIsOpenToFalse(); // загрываем окно добавления
   }
