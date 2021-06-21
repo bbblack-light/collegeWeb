@@ -37,7 +37,7 @@ app.get('/api/entrance', function(req, res) { //сервер обрабатыв�
   res.download(store.getEntrance());
 });
 
-app.get('*', (req,res) =>{
+app.get('/', (req,res) =>{
   res.sendFile(path.resolve(__dirname, '../dist/index.html')); // на все остальные запросы отдаем файл index.html с React приложением
 });
 
