@@ -10,6 +10,7 @@ import config from '../../config';
 import './student.css'
 
 export default function Student(props) {
+  const [user, setUser] = useState({role: ''}) //user изначально с пустой ролью. Функция setUser будет задавать пользователя и обновлять компонент после этого
   const [errorMessage, setError] = useState(''); // errorMessage = '' - изначально пустой. функция setError будет задавать сообщение об ошибке и обновлять компонент после этого
   const [constructorHasRun, setConstructorHasRun] = useState(false); // флаг для понимания, отработал ли конструктор или нет
   const [modalIsOpen,setModalIsOpen] = useState(false); // флаг говорящий, открыто ли окно добавления
@@ -65,6 +66,9 @@ export default function Student(props) {
     if (localStorage.getItem('token')!=null) {
       setIsLogin(true);
     }
+    getUser().then((data) => { // подгружаем пользователя
+      if (!isError(data)) setUser(data); // если вернулась не ошибка, то присваиваем user
+    })
   }
 
   constructor();
@@ -117,13 +121,15 @@ export default function Student(props) {
               Список консультаций
         </Link>
 
-        <Link to='/students' className={ cn('info-item') }>
-              Список студентов
-        </Link>
-
         <Link to='/master-class' className={ cn('info-item') }>
               Список мастер классов
         </Link>
+        {
+          user.role=='ADMIN' && 
+          (<Link to='/students' className={ cn('info-item') }>
+          Список студентов
+          </Link>)
+        }
       </div>
     )
   };
