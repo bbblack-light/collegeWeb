@@ -216,7 +216,7 @@ export default function Consulting(props) {
       
     }
   }
-  const renderConferenceValue = useMemo(() => { //метод возвращает верстку информации о конференциях
+  const renderConferenceValue = () => { //метод возвращает верстку информации о конференциях
     if (consultingInfo!==undefined && consultingInfo.length!=0) {
       return renderConsulting.map((conf) => {
         return(
@@ -250,7 +250,7 @@ export default function Consulting(props) {
       }) 
     }
     return (<p>Консультаций пока нет!</p>);
-  }, [renderConsulting]);
+  }
 
   return (
     <div class={cn()}>
@@ -266,7 +266,7 @@ export default function Consulting(props) {
         { addButton() }
       </section>
       <section className={ cn('content') }>
-        { renderConferenceValue }
+        { renderConferenceValue() }
       </section>
     </div>
   )
