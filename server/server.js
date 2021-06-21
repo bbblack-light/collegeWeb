@@ -4,6 +4,7 @@ const cors = require('cors')
 const scheduler = require('./scheduler');
 const scraper = require('./scraper');
 const store = require('./store');
+const http = require('http')
 require('./db/models/index');
 
 const port = 3000;
@@ -42,6 +43,6 @@ app.get('/', (req,res) =>{
 });
 
 
-http.listen((process.env.PORT || port), () => { //запускаем сервер
+app.listen((process.env.PORT || port), () => { //запускаем сервер
   console.log(`App listening at http://localhost:${port}`)
 })
