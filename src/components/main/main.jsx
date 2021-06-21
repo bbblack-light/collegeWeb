@@ -29,7 +29,7 @@ export default function Main(props) {
               <a href={newsItem.link} className={ cn('news-item-link')}>
                 <h3>{ newsItem.title }</h3>
               </a>
-              <img src={ newsItem.imageUrl } className={ cn('news-item-image')}/>
+              {/* <img src={ newsItem.imageUrl.includes('https://') ? 'http://' + newsItem.imageUrl : newsItem.imageUrl} className={ cn('news-item-image')}/> */}
               <p>{newsItem.text}...</p>
             </div>
           )
